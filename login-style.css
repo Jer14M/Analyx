@@ -1,0 +1,95 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.form-toggle {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form-toggle button {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 10px;
+  color: #ccc;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.form-toggle button.active {
+  color: #fff;
+  border-bottom: 2px solid #ff6b6b;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+  background: #ff6b6b;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+button:hover {
+  background: #ff4757;
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+.error-message {
+  color: #ff4757;
+  margin-bottom: 10px;
+  font-size: 14px;
+  min-height: 20px;
+}

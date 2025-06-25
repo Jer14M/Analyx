@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gioco dell'Eredità - Sfida della Parola</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts per un look moderno -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Menu iniziale -->
+    <div id="menu">
+      <h1>Gioco dell'Eredità</h1>
+      <div id="user-welcome">Benvenuto, <span id="username-display"></span>!</div>
+      <button id="localGameBtn">Partita Locale</button>
+      <button id="onlineGameBtn">Partita Online</button>
+      <button id="logoutBtn" class="logout-btn">Logout</button>
+    </div>
+
+    <!-- Impostazioni per partita locale -->
+    <div id="localGameSetup" class="hidden">
+      <h2>Partita Locale</h2>
+      <label for="numPlayers">Numero di giocatori (2-4): </label>
+      <select id="numPlayers">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <!-- Container per gli input dei nomi dei giocatori -->
+      <div id="playerNamesContainer"></div>
+      <!-- Campo per scegliere la durata del timer -->
+      <label for="timerDuration">Durata del timer (45-600 secondi): </label>
+      <input type="number" id="timerDuration" min="45" max="600" value="45" />
+      <button id="startLocalGameBtn">Inizia Partita Locale</button>
+    </div>
+
+    <!-- Impostazioni per partita online -->
+    <div id="onlineGameSetup" class="hidden">
+      <h2>Partita Online</h2>
+      <p>Attendi di essere abbinato a un avversario...</p>
+      <div id="onlineStatus"></div>
+      <button id="cancelOnlineBtn">Annulla</button>
+    </div>
+
+    <!-- Area di gioco -->
+    <div id="gameArea" class="hidden">
+      <!-- Pulsante Menu (visibile durante la partita) -->
+      <button id="backToMenuBtn" class="menu-button">Menu</button>
+      <!-- Visualizza i timer (sia locali che online) -->
+      <div id="playersTimers"></div>
+      <div id="turnInfo"></div>
+      <div id="definition"></div>
+      <!-- Contenitore della parola (senza wrapping) -->
+      <div id="wordDisplay"></div>
+      <div id="timer"></div>
+      <input
+        type="text"
+        id="guessInput"
+        placeholder="Inserisci la tua risposta"
+        autocomplete="off"
+      />
+      <button id="startVoiceBtn">Parla</button>
+      <button id="pauseBtn" class="hidden">Pausa</button>
+      <div id="result"></div>
+      <!-- Controlli di fine partita -->
+      <div id="endGameControls" class="hidden">
+        <button id="restartBtn">Rivincita</button>
+        <button id="menuBtn">Menu Principale</button>
+      </div>
+    </div>
+
+    <!-- Elemento per l'animazione di transizione tra i turni -->
+    <div id="turnTransition" class="hidden"></div>
+
+    <!-- Includi socket.io e il file script.js -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
